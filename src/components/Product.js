@@ -10,22 +10,27 @@ export default class componentName extends Component {
         return (
             <ProductWrapper className = "col-9 mx-auto col-md-6 col-lg-3 my-3">
                 <div className="card">
-                    <div className = "img-container p-5" onClick ={console.log("gols")}>
-                        <Link to="/details">
-                            <img src={img} alt="product" className ="card-img-top"/>
-                        </Link>
-                        <button
-                            className="cart-btn"
-                            disable = {inCart? true:false }
-                            onClick = {() => console.log("Agregado al carro")}
-                        > 
-                            {inCart ? (
-                                <p className ="text-capitalize mb-0" disable> {" "}In Cart</p>
-                            ):(
-                            <p className ="fas fa-cart-plus"/>)}
-                        </button>
-                    </div>
-                    {/*  Card footer */}
+                    <ProductConsumer>
+                        {(value) => (
+                          <div className = "img-container p-5" onClick = {() => value.handleDetail(id)}>
+                          <Link to="/details">
+                              <img src={img} alt="product" className ="card-img-top"/>
+                          </Link>
+                          <button
+                              className="cart-btn"
+                              disable = {inCart? true : false}
+                              onClick = {() => {
+                                  value.addToCart(id);
+                              }}
+                          > 
+                              {inCart ? (
+                                  <p className ="text-capitalize mb-0" disable> {" "}In Cart</p>
+                              ):(
+                              <p className ="fas fa-cart-plus"/>)}
+                          </button>
+                      </div>  
+                        )}
+                    </ProductConsumer>
                     <div className ="card-footer d-flex justify-content-between">
                         <p className ="aling-self-center mb-0">
                             {title}
