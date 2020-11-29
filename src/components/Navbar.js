@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom";
-import logo from "../logo.svg"
+import logo from "../logo.png"
 import styled from "styled-components"
 import {ButtonContainer} from "./Button"
 export default class Navbar extends Component {
@@ -11,9 +11,9 @@ export default class Navbar extends Component {
                     <img src = {logo} alt ="store" className="navbar-brand"/>
                 </Link>
                 <ul className="navbar-nav align-items-center">
-                    <li className="nav-item ml-5">
+                    <li className="nav-item ml-0.5">
                         <Link to ="/" className = "nav-link">
-                            Productos
+                            JP store
                         </Link>
                     </li>
                 </ul>
