@@ -24,15 +24,14 @@ body{
 }
 .btn-black{
   background: transparent;
-  text-transform: capitalize;
-  font-size: 0.8rem !important;
+  font-size: 1.2rem !important;
   color: var(--mainDark);
   border-radius: 0.2rem !important;
   border-color: 0.1rem solid var(--mainDark) !important;
 }
 .btn-black:hover{
   background: var(--mainDark) !important;
-  color: var(--mainWhite)!important;
+  color: grey !important;
 }
 .cart-icon{
   cursor: pointer;
